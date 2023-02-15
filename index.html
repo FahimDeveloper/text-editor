@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body id="body">
+    <header class="container mx-auto pt-16 pb-10">
+        <h1 class="text-5xl capitalize font-medium text-center">make your <span class="text-orange-600">text</span>
+            awesome</h1>
+    </header>
+    <main class="container mx-auto">
+        <section class="text_editor">
+            <div class="text_editor_information bg-zinc-300 px-5 py-1">
+                <ul class="capitalize flex gap-6 text-lg">
+                    <li><a href="#">file</a></li>
+                    <li><a href="#">edit</a></li>
+                    <li><a href="#">view</a></li>
+                    <li><a href="#">insert</a></li>
+                    <li><a href="#">format</a></li>
+                    <li><a href="#">tools</a></li>
+                </ul>
+            </div>
+            <div
+                class="text_editor flex flex-wrap lg:gap-16 md:gap-5 gap-x-3 sm:py-0 py-2 items-center border-x border-zinc-300">
+                <div class="editText">
+                    <ul class="flex lg:gap-2 gap-1 py-2">
+                        <li id="bold" class="cursor-pointer hover:bg-zinc-300 px-3 py-1">
+                            <i class="fa-solid fa-b"></i>
+                        </li>
+                        <li id="italic" class="cursor-pointer hover:bg-zinc-300 px-3 py-1">
+                            <i class="fa-solid fa-italic"></i>
+                        </li>
+                        <li id="underline" class="cursor-pointer hover:bg-zinc-300 px-3 py-1">
+                            <i class="fa-solid fa-underline"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="editFont">
+                    <ul class="flex lg:gap-3 gap-2">
+                        <li>
+                            <input id="font-size" type="number" class="border border-black lg:w-24 w-20 px-2" min="10">
+                        </li>
+                        <li>
+                            <select id="fontFamily" class="border border-black lg:w-56 md:w-32 w-28">
+                                <option value="open sans"> Open Sans</option>
+                                <option value="roboto">Roboto</option>
+                                <option value="poppins">Poppins</option>
+                                <option value="lato">Lato</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+                <div class="textAlign">
+                    <ul class="flex py-2 gap-1">
+                        <li id="text-align-left" class="cursor-pointer hover:bg-zinc-300 px-3 py-1 border">
+                            <i class="fa-solid fa-align-left"></i>
+                        </li>
+                        <li id="text-align-center" class="cursor-pointer hover:bg-zinc-300 px-3 py-1 border">
+                            <i class="fa-solid fa-align-center"></i>
+                        </li>
+                        <li id="text-align-right" class="cursor-pointer hover:bg-zinc-300 px-3 py-1 border">
+                            <i class="fa-solid fa-align-right"></i>
+                        </li>
+                        <li id="text-align-justify" class="cursor-pointer hover:bg-zinc-300 px-3 py-1 border">
+                            <i class="fa-solid fa-align-justify"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="textFormet_color">
+                    <ul class="flex md:gap-5 gap-2 items-center">
+                        <li id="text-transform" class="cursor-pointer hover:bg-zinc-300 px-3 py-1 border">Aa</li>
+                        <li class="cursor-pointer"><input type="color" id="color"></li>
+                    </ul>
+                </div>
+            </div>
+            <textarea id="text" class="border p-4 text-xl border-black w-full font-normal resize-none min-h-[600px]"
+                id="text_feild">Make your text</textarea>
+        </section>
+    </main>
+
+
+
+
+    <script src="utilities.js"></script>
+    <script src="editor.js"></script>
+</body>
+
+</html>
