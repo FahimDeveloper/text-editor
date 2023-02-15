@@ -1,76 +1,43 @@
 //text
 const text = document.getElementById("text");
-
-//text bold
-document.getElementById("bold").addEventListener("click", function () {
-    if (text.style.fontWeight === "700") {
-        text.style.fontWeight = "400";
-    } else {
-        text.style.fontWeight = "700";
+//functional work
+function textRelated(value) {
+    if (value == "bold") {
+        if (text.style.fontWeight === "700") {
+            text.style.fontWeight = "400";
+        } else {
+            text.style.fontWeight = "700";
+        }
+    } else if (value == "italic") {
+        if (text.style.fontStyle === "italic") {
+            text.style.fontStyle = "normal";
+        } else {
+            text.style.fontStyle = "italic";
+        }
+    } else if (value == "underline") {
+        if (text.style.textDecoration === "underline") {
+            text.style.textDecoration = "none";
+        } else {
+            text.style.textDecoration = "underline";
+        }
+    } else if (value == "fontSize") {
+        const fontSizePx = document.getElementById("font-size").value;
+        text.style.fontSize = fontSizePx + "px";
     }
-});
-
-//text italic
-document.getElementById("italic").addEventListener("click", function () {
-    if (text.style.fontStyle === "italic") {
-        text.style.fontStyle = "normal";
-    } else {
-        text.style.fontStyle = "italic";
+    else if (value == "transform") {
+        if (text.style.textTransform === "uppercase") {
+            text.style.textTransform = "lowercase";
+        } else {
+            text.style.textTransform = "uppercase";
+        }
+    } else if (value == "color") {
+        const takeColor = document.getElementById("color").value
+        text.style.color = takeColor;
     }
-});
-
-//text underline
-document.getElementById("underline").addEventListener("click", function () {
-    if (text.style.textDecoration === "underline") {
-        text.style.textDecoration = "none";
-    } else {
-        text.style.textDecoration = "underline";
-    }
-});
-
-// fontSize
-document.getElementById("font-size").addEventListener("click", function (event) {
-    const fontSizePx = event.target.value;
-    text.style.fontSize = fontSizePx + "px";
-});
-document.getElementById("font-size").addEventListener("keyup", function (event) {
-    const fontSizePx = event.target.value;
-    text.style.fontSize = fontSizePx + "px";
-});
+}
 //default vlaue
-document.getElementById("font-size").defaultValue = "20"
+document.getElementById("font-size").defaultValue = "20";
 
-//text align left
-document.getElementById("text-align-left").addEventListener("click", function () {
-    text.style.textAlign = "left"
-});
-
-//text align center
-document.getElementById("text-align-center").addEventListener("click", function () {
-    text.style.textAlign = "center"
-});
-
-//text align right
-document.getElementById("text-align-right").addEventListener("click", function () {
-    text.style.textAlign = "right"
-});
-
-//text align justify
-document.getElementById("text-align-justify").addEventListener("click", function () {
-    text.style.textAlign = "justify"
-});
-
-//text transform
-document.getElementById("text-transform").addEventListener("click", function () {
-    if (text.style.textTransform === "uppercase") {
-        text.style.textTransform = "none";
-    } else {
-        text.style.textTransform = "uppercase";
-    }
-});
-
-//text color
-document.getElementById("body").addEventListener("input", function () {
-    const takeColor = document.getElementById("color").value
-    text.style.color = takeColor;
-})
+function alignItem(value) {
+    text.style.textAlign = value;
+}
