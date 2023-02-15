@@ -70,11 +70,7 @@ document.getElementById("text-transform").addEventListener("click", function () 
 });
 
 //text color
-document.getElementById("body").addEventListener("click", function () {
-    const takeColor = document.getElementById("color").value
-    text.style.color = takeColor;
-})
-document.getElementById("color").addEventListener("click", function () {
+document.getElementById("body").addEventListener("input", function () {
     const takeColor = document.getElementById("color").value
     text.style.color = takeColor;
 })
